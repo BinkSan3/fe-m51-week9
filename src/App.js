@@ -1,9 +1,16 @@
 import "./App.css";
+import CardContainer from "./components/cards/cardContainer/CardContainer";
+import Footer from "./components/layout/footer/Footer";
+import Header from "./components/layout/header/Header";
+import UserContainer from "./components/user/userContainer/UserContainer";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <Header />
+      <CardContainer />
+      <UserContainer />
+      <Footer />
     </div>
   );
 }

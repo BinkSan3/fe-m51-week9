@@ -1,0 +1,8 @@
+.card-container {
+  width: 75%;
+  height: 300px;
+  display: flex;
+  background-color: black;
+  justify-content: space-evenly;
+  margin: 50px;
+}

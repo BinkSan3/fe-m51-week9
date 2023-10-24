@@ -1,0 +1,17 @@
+.registerBox {
+  margin: 50px;
+}
+
+#registerForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffab00;
+  align-items: center;
+  width: 100%;
+  margin: 50px;
+}
+
+#registerForm input {
+  margin: 25px;
+  width: 50%;
+}

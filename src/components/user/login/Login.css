@@ -1,0 +1,17 @@
+.loginBox {
+  margin: 50px;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffab00;
+  width: 100%;
+  margin: 50px;
+  align-items: center;
+}
+
+#loginForm input {
+  margin: 20px;
+  width: 50%;
+}
