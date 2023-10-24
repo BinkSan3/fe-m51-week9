@@ -1,0 +1,12 @@
+.header {
+  background-color: #8e0d3c;
+  width: 100%;
+  height: 100pxpx;
+  display: flex;
+  align-items: center;
+  position: static;
+}
+
+#headerTitle {
+  margin: 25px;
+}
