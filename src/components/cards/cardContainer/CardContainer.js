@@ -3,12 +3,14 @@ import Card from "../card/Card";
 
 import "./CardContainer.css";
 
-const CardContainer = () => {
+import { getUsers } from "../../../utils";
+
+const CardContainer = ({ users }) => {
   const fakeUsers = ["bill", "jane", "fred", "sarah", "bob", "alice", "andres"];
 
   return (
     <div className="card-container">
-      {fakeUsers.map((user, index) => (
+      {users.map((user, index) => (
         <Card user={user} />
       ))}
     </div>
