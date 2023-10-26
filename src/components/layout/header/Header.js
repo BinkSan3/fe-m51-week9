@@ -2,11 +2,18 @@ import React from "react";
 
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ user }) => {
+  if (!user) {
+    return <h1>You are not logged in</h1>;
+  }
   return (
-    <div className="header">
-      <h1 id="headerTitle">Header</h1>
-    </div>
+    <header>
+      <div className="header">
+        <h1 id="headerTitle">
+          Hi {user.username}, You are logged in to website
+        </h1>
+      </div>
+    </header>
   );
 };
 
