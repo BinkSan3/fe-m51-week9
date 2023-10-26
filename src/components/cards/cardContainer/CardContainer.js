@@ -3,7 +3,7 @@ import Card from "../card/Card";
 
 import "./CardContainer.css";
 
-import { getUsers } from "../../../utils";
+import { getAllUsers } from "../../../utils";
 
 const CardContainer = ({ users }) => {
   console.log("users card container", users);

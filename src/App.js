@@ -7,6 +7,7 @@ import UserContainer from "./components/user/userContainer/UserContainer";
 
 import { fetchUserData } from "./utils";
 import { getTokenFromCookie } from "./common";
+import { authCheck } from "./utils";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -37,29 +38,9 @@ function App() {
     await setUser(persistentUser);
   };
 
-  // useEffect(() => {
-  //   async function getAllUsers() {
-  //     const data = await fetchUserData();
-  //     await setUsers(data);
-  //     console.log(data);
-  //   }
-  //   getAllUsers();
-  // }, []);
-
-  //login works but what is it supposed to do?
-  //maybe not display the login component any more and dispay welcome back and the username
-
-  // const handleLogin = async (e, setter, state) => {
-  //   e.preventDefault();
-  //bring in the login fetch data somehow
-  //or just simply do the rederings in the log in
-  //   console.log(data);
-  //   await setUser(data);
-  // };
-
   return (
     <div className="App">
-      <Header />
+      <Header user={user} />
       <CardContainer users={users} />
       <UserContainer user={user} setUser={setUser} setUsers={setUsers} />
       {/* <>{user ? <p>{user.userName} is logged in</p> : <p>not logged in</p>}</> */}

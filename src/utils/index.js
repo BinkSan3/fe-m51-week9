@@ -9,7 +9,7 @@ export const registerUser = async (username, email, password) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        userName: username,
+        username: username,
         email: email,
         password: password,
       }),
@@ -30,12 +30,13 @@ export const loginUser = async (username, password, setUser) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        userName: username,
+        username: username,
         password: password,
       }),
     });
 
     const data = await response.json();
+    console.log("UUUUUUUUUUUUUUUUUUUUUU");
     writeCookie("jwt_token", data.user.token, 7);
     console.log("hello from login user in utils", data.user);
     return data.user;
@@ -70,8 +71,8 @@ export const getAllUsers = async () => {
     });
 
     const data = response.json();
-
-    return data.findUsers;
+    console.log(data);
+    return data.users;
   } catch (error) {
     console.log(error);
   }
@@ -79,7 +80,7 @@ export const getAllUsers = async () => {
 
 export const authCheck = async (jwt) => {
   try {
-    const response = await fetch("http://localhost:5001:users/authCheck", {
+    const response = await fetch("http://localhost:5001/users/authCheck", {
       method: "GET",
       mode: "cors",
       headers: {

@@ -17,8 +17,9 @@ const Login = ({ user, setUser }) => {
     e.preventDefault();
     console.log(username, password);
     const loggedUser = await loginUser(username, password);
+    console.log(loggedUser);
     await setUser(loggedUser);
-    console.log(user);
+    console.log("FROM THE LOG IN FUNCTION", user);
   };
 
   return (
