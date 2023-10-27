@@ -5,7 +5,7 @@ import Footer from "./components/layout/footer/Footer";
 import Header from "./components/layout/header/Header";
 import UserContainer from "./components/user/userContainer/UserContainer";
 
-import { fetchUserData } from "./utils";
+// import { fetchUserData } from "./utils";   //old code to protect a get request
 import { getTokenFromCookie } from "./common";
 import { authCheck } from "./utils";
 
@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <Header user={user} />
-      <CardContainer users={users} />
+      <CardContainer users={users} setUsers={setUsers} />
       <UserContainer user={user} setUser={setUser} setUsers={setUsers} />
       {/* <>{user ? <p>{user.userName} is logged in</p> : <p>not logged in</p>}</> */}
       <Footer />

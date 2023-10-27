@@ -36,9 +36,7 @@ export const loginUser = async (username, password, setUser) => {
     });
 
     const data = await response.json();
-    console.log("UUUUUUUUUUUUUUUUUUUUUU");
     writeCookie("jwt_token", data.user.token, 7);
-    console.log("hello from login user in utils", data.user);
     return data.user;
   } catch (error) {
     console.log(error);
@@ -92,6 +90,30 @@ export const authCheck = async (jwt) => {
     console.log("authCheck utils data", data);
     data.user.token = jwt;
     return data.user;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteUser = async (id) => {
+  try {
+    const token = getTokenFromCookie("jwt_token");
+    console.log("SEARCHING FOR ID", id);
+    const response = await fetch("http://localhost:5001/users/deleteOne", {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        id: id,
+      }),
+    });
+
+    const data = await response.json();
+    console.log("FROM UTILS", data);
+    return data;
   } catch (error) {
     console.log(error);
   }
