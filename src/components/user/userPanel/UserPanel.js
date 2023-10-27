@@ -5,7 +5,6 @@ const UserPanel = ({ setUsers }) => {
   const handleClick = async (e) => {
     e.preventDefault();
     const foundUsers = await getAllUsers();
-    console.log(foundUsers);
     await setUsers(foundUsers);
   };
   return (

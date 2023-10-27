@@ -6,12 +6,11 @@ import "./CardContainer.css";
 import { getAllUsers } from "../../../utils";
 
 const CardContainer = ({ users }) => {
-  console.log("users card container", users);
   const fakeUsers = ["bill", "jane", "fred", "sarah", "bob", "alice", "andres"];
 
   return (
     <div className="card-container">
-      {fakeUsers.map((user, index) => (
+      {users.map((user, index) => (
         <Card user={user} />
       ))}
     </div>

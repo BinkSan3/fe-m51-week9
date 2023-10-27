@@ -70,8 +70,7 @@ export const getAllUsers = async () => {
       },
     });
 
-    const data = response.json();
-    console.log(data);
+    const data = await response.json();
     return data.users;
   } catch (error) {
     console.log(error);
